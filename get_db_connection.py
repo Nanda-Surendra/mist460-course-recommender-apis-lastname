@@ -12,7 +12,7 @@ load_dotenv(dotenv_path=env_path)
 def get_db_connection():
 
 # Get environment
-    env = 'PRODUCTION' #os.getenv('ENVIRONMENT').upper()
+    env = os.getenv('ENVIRONMENT')
 
     if env == 'PRODUCTION':
         DB_SERVER = os.getenv('DB_SERVER')
