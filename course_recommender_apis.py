@@ -6,8 +6,16 @@ from enroll_student_in_course_offering import enroll_student_in_course_offering
 from get_student_enrolled_course_offerings import get_student_enrolled_course_offerings
 from drop_student_from_course_offering import drop_student_from_course_offering
 from validate_user import validate_user
+from get_recommendations_for_job_description import get_recommendations_for_job_description
 
 app = FastAPI()
+
+@app.get("/get_recommendations_for_job_description/")
+def get_recommendations_for_job_description_api(
+        job_description: str
+):
+    return get_recommendations_for_job_description(job_description)
+
 
 @app.get("/validate_user/")
 def validate_user_api(username: str, password: str):
